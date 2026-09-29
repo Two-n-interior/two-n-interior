@@ -119,6 +119,17 @@ button {
   border: 1.5px solid var(--black);
 }
 
+.about-split__brochure {
+  margin-top: 28px;
+  gap: 10px;
+}
+
+.about-split__brochure svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .btn--outline:hover {
   background: var(--black);
   border-color: var(--gold);
