@@ -142,7 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyMsg = document.getElementById('portfolioEmpty');
     const searchInput = document.getElementById('portfolioSearch');
     const pageFilterBtns = document.querySelectorAll('.portfolio-page .portfolio-filter__btn');
+    const loadMoreBtn = document.getElementById('portfolioLoadMore');
+    const PAGE_SIZE = 6;
     let activeFilter = 'all';
+    let visibleCount = PAGE_SIZE;
 
     const requestedFilter = new URLSearchParams(window.location.search).get('filter');
     if (requestedFilter && Array.from(pageFilterBtns).some((b) => b.getAttribute('data-filter') === requestedFilter)) {
@@ -154,14 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderCards = () => {
       const term = (searchInput?.value || '').trim().toLowerCase();
       portfolioGrid.innerHTML = '';
-      let count = 0;
 
-      projects.forEach((p) => {
+      const matched = projects.filter((p) => {
         const matchFilter = activeFilter === 'all' || p.category === activeFilter;
         const matchSearch = !term || p.title.toLowerCase().includes(term) || p.location.toLowerCase().includes(term);
-        if (!matchFilter || !matchSearch) return;
-        count++;
+        return matchFilter && matchSearch;
+      });
 
+      matched.slice(0, visibleCount).forEach((p) => {
         const card = document.createElement('div');
         card.className = 'portfolio-item';
         card.setAttribute('data-reveal', '');
@@ -187,7 +190,8 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.add('is-visible');
       });
 
-      if (emptyMsg) emptyMsg.hidden = count > 0;
+      if (emptyMsg) emptyMsg.hidden = matched.length > 0;
+      if (loadMoreBtn) loadMoreBtn.hidden = visibleCount >= matched.length;
     };
 
     pageFilterBtns.forEach((btn) => {
@@ -196,12 +200,23 @@ document.addEventListener('DOMContentLoaded', () => {
         pageFilterBtns.forEach((b) => b.classList.remove('is-active'));
         btn.classList.add('is-active');
         activeFilter = btn.getAttribute('data-filter');
+        visibleCount = PAGE_SIZE;
         renderCards();
       });
     });
 
     if (searchInput) {
-      searchInput.addEventListener('input', renderCards);
+      searchInput.addEventListener('input', () => {
+        visibleCount = PAGE_SIZE;
+        renderCards();
+      });
+    }
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        visibleCount += PAGE_SIZE;
+        renderCards();
+      });
     }
 
     /* Modal */
