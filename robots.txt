@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+Sitemap: https://two-n-interior-95ad6.web.app/sitemap.xml
