@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     construction: 'รับเหมาก่อสร้าง/ต่อเติม',
     interior: 'ตกแต่งภายใน',
     furniture: 'เฟอร์นิเจอร์ Built-in',
-    garden: 'จัดสวน'
+    garden: 'จัดสวน',
+    design: 'ออกแบบ (แบบเสนองาน/คอนเซปต์)'
   };
 
   let currentImages = [];
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       allProjects = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       emptyState.hidden = allProjects.length > 0;
 
-      const CATEGORY_ORDER = ['construction', 'interior', 'furniture', 'garden'];
+      const CATEGORY_ORDER = ['construction', 'interior', 'furniture', 'garden', 'design'];
       const groups = new Map();
       CATEGORY_ORDER.forEach((cat) => groups.set(cat, []));
       allProjects.forEach((p) => {

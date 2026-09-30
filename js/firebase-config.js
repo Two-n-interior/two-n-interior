@@ -22,12 +22,14 @@ const CATEGORY_LABELS = {
     construction: 'งานก่อสร้าง/ต่อเติม',
     interior: 'ตกแต่งภายใน',
     furniture: 'เฟอร์นิเจอร์ Built-in',
-    garden: 'จัดสวน'
+    garden: 'จัดสวน',
+    design: 'ออกแบบ'
   },
   en: {
     construction: 'Construction/Renovation',
     interior: 'Interior Design',
     furniture: 'Built-in Furniture',
-    garden: 'Landscaping'
+    garden: 'Landscaping',
+    design: 'Design'
   }
 };
