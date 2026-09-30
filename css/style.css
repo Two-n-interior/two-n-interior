@@ -1414,16 +1414,6 @@ body.modal-open {
   padding: 60px 0;
 }
 
-.portfolio-load-more-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-#portfolioLoadMore[hidden] {
-  display: none;
-}
-
 .portfolio-item {
   border: 1px solid var(--border-gray);
   border-radius: var(--radius-lg);
