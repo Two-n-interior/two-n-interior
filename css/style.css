@@ -1923,15 +1923,13 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin-top: 22px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border-gray);
+  gap: 10px;
+  margin-bottom: 22px;
 }
 
 .contact-modal__qr img {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: var(--radius);
   border: 1px solid var(--border-gray);
 }
