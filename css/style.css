@@ -1919,6 +1919,28 @@ body.modal-open {
   flex-wrap: wrap;
 }
 
+.contact-modal__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-gray);
+}
+
+.contact-modal__qr img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-gray);
+}
+
+.contact-modal__qr span {
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+}
+
 @media (max-width: 600px) {
   .contact-modal__dialog {
     padding: 32px 24px 28px;
