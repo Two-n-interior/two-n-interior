@@ -1912,19 +1912,11 @@ body.modal-open {
   color: var(--mid-gray);
 }
 
-.contact-modal__actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .contact-modal__qr {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin-bottom: 22px;
 }
 
 .contact-modal__qr img {
@@ -2068,34 +2060,6 @@ body.modal-open {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.footer__line-qr {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 6px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius);
-  width: fit-content;
-}
-
-.footer__line-qr img {
-  width: 60px;
-  height: 60px;
-  border-radius: 6px;
-  background: var(--white);
-  padding: 4px;
-  flex-shrink: 0;
-}
-
-.footer__line-qr span {
-  font-size: 0.85rem;
-  color: var(--gold-light);
-  max-width: 110px;
-  line-height: 1.4;
 }
 
 .footer__bottom {
